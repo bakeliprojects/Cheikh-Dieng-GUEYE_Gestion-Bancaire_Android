@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Mobile Banking</string>
+    <string name="tvLogin">Connexion</string>
+    <string name="etLogin">Login</string>
+    <string name="etPassword">Password</string>
+    <string name="bConnect">Se Connecter</string>
+    <string name="bSavingAccount">Saving Account</string>
+</resources>
