@@ -17,16 +17,26 @@ public class LoginActivity extends AppCompatActivity {
 
         final EditText etLogin = (EditText) findViewById(R.id.editText);
         final EditText etPassword = (EditText) findViewById(R.id.editText3);
+        final TextView tvSignIn = (TextView) findViewById(R.id.tvSignIn);
         Button bConnect = (Button) findViewById(R.id.button);
 
         bConnect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(etLogin.equals("cheikh") && etPassword.equals("gueye"))
-                {
-                    Intent LoginIntent = new Intent(LoginActivity.this, HomeActivity.class);
+
+                    Intent LoginIntent = new Intent(getApplicationContext(), HomeActivity.class);
                     LoginActivity.this.startActivity(LoginIntent);
-                }
+
+            }
+        });
+
+        tvSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent LoginIntent = new Intent(getApplicationContext(), InsertUser.class);
+                LoginActivity.this.startActivity(LoginIntent);
+
             }
         });
     }

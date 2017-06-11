@@ -5,4 +5,12 @@
     <string name="etPassword">Password</string>
     <string name="bConnect">Se Connecter</string>
     <string name="bSavingAccount">Saving Account</string>
+    <string name="bCheckingAccount">Checking Account</string>
+    <string name="bBusinessAccount">Business Account</string>
+    <string name="tvSignIn">Créer un compte</string>
+    <string name="etUsername" translatable="false">Username</string>
+    <string name="etNom">Nom</string>
+    <string name="etPrenom">Prenom</string>
+    <string name="bSinscrire">S\'inscrire</string>
+    <string name="bAnnuler">Annuler</string>
 </resources>

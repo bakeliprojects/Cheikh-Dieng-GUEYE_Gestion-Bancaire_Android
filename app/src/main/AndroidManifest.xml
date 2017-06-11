@@ -16,7 +16,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity"></activity>
+        <!-- <activity android:name=".HomeActivity"></activity> -->
+        <activity
+            android:name=".HomeActivity"
+            android:label="HomeActivity"
+            android:parentActivityName=".LoginActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bakeli.mobilebanking.LoginActivity" />
+        </activity>
+        <!-- <activity android:name=".InsertUser"></activity> -->
+        <activity
+            android:name=".InsertUser"
+            android:label="InsertUser"
+            android:parentActivityName=".LoginActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bakeli.mobilebanking.InsertUser" />
+        </activity>
+        <activity android:name=".DisplayInfo"></activity>
     </application>
 
 </manifest>
