@@ -8,9 +8,10 @@
     <string name="bCheckingAccount">Checking Account</string>
     <string name="bBusinessAccount">Business Account</string>
     <string name="tvSignIn">Créer un compte</string>
-    <string name="etUsername" translatable="false">Username</string>
+    <string name="etUsername">Username</string>
     <string name="etNom">Nom</string>
     <string name="etPrenom">Prenom</string>
     <string name="bSinscrire">S\'inscrire</string>
     <string name="bAnnuler">Annuler</string>
+    <string name="etTypeCompte">Type de Compte</string>
 </resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bakeli.mobilebanking.activities.Saving">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vous pouvez effectuer les opérations suibvantes : "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_marginTop="67dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/bVirement"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="36dp"
+        android:background="@android:color/holo_red_light"
+        android:text="Depôt"
+        android:layout_below="@+id/textView3"
+        android:layout_alignRight="@+id/bConsultation"
+        android:layout_alignEnd="@+id/bConsultation" />
+
+    <Button
+        android:id="@+id/bConsultation"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_marginTop="77dp"
+        android:background="@android:color/darker_gray"
+        android:text="Consultation de solde"
+        android:layout_below="@+id/bRetrait"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/bRetrait"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
+        android:background="@android:color/holo_green_light"
+        android:text="Retrait"
+        android:layout_marginTop="10dp"
+        android:layout_alignTop="@+id/bVirement"
+        android:layout_toRightOf="@+id/bVirement"
+        android:layout_toEndOf="@+id/bVirement"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp" />
+
+    <Button
+        android:id="@+id/bDepot"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
+        android:layout_alignBaseline="@+id/bConsultation"
+        android:layout_alignBottom="@+id/bConsultation"
+        android:layout_alignLeft="@+id/bRetrait"
+        android:layout_alignStart="@+id/bRetrait"
+        android:background="@android:color/holo_blue_light"
+        android:text="Virement" />
+
+</RelativeLayout>

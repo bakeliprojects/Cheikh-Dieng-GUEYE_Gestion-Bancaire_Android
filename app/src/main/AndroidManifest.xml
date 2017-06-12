@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,27 +18,92 @@
         </activity>
         <!-- <activity android:name=".HomeActivity"></activity> -->
         <activity
-            android:name=".HomeActivity"
+            android:name=".activities.HomeActivity"
             android:label="HomeActivity"
-            android:parentActivityName=".LoginActivity">
+            android:parentActivityName=".activities.LoginActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.bakeli.mobilebanking.LoginActivity" />
+                android:value="com.bakeli.mobilebanking.activities.LoginActivity" />
         </activity>
         <!-- <activity android:name=".InsertUser"></activity> -->
         <activity
-            android:name=".InsertUser"
+            android:name=".activities.InsertUser"
             android:label="InsertUser"
-            android:parentActivityName=".LoginActivity">
+            android:parentActivityName=".activities.LoginActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.bakeli.mobilebanking.InsertUser" />
+                android:value="com.bakeli.mobilebanking.activities.LoginActivity" />
         </activity>
-        <activity android:name=".DisplayInfo"></activity>
+        <!-- <activity android:name=".activities.DisplayInfo"></activity> -->
+        <activity
+            android:name=".activities.DisplayInfo"
+            android:label="DisplayInfo"
+            android:parentActivityName=".activities.InsertUser">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bakeli.mobilebanking.activities.InsertUser" />
+        </activity>
+        <!-- <activity android:name=".activities.Saving"></activity> -->
+        <activity
+            android:name=".activities.Saving"
+            android:label="Saving"
+            android:parentActivityName=".activities.HomeActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bakeli.mobilebanking.activities.HomeActivity" />
+        </activity>
+        <!-- <activity android:name=".activities.DepotActivity" /> -->
+        <activity
+            android:name=".activities.DepotActivity"
+            android:label="DepotActivity"
+            android:parentActivityName=".activities.Saving">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bakeli.mobilebanking.activities.Saving" />
+        </activity>
+        <!-- <activity android:name=".activities.RetraitActivity" /> -->
+        <activity
+            android:name=".activities.RetraitActivity"
+            android:label="RetraitActivity"
+            android:parentActivityName=".activities.Saving">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bakeli.mobilebanking.activities.Saving" />
+        </activity>
+        <!-- <activity android:name=".activities.ConsultationActivity" />-->
+        <activity
+            android:name=".activities.ConsultationActivity"
+            android:label="ConsultationActivity"
+            android:parentActivityName=".activities.Saving">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bakeli.mobilebanking.activities.Saving" />
+        </activity>
+        <!-- <activity android:name=".activities.VirementActivity"></activity>-->
+        <activity
+            android:name=".activities.VirementActivity"
+            android:label="VirementActivity"
+            android:parentActivityName=".activities.Saving">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bakeli.mobilebanking.activities.Saving" />
+        </activity>
     </application>
 
 </manifest>
