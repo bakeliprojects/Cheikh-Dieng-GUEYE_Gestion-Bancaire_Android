@@ -1,6 +1,8 @@
 package com.bakeli.mobilebanking.activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,8 +41,21 @@ public class LoginActivity extends AppCompatActivity {
                 boolean res = db.login(login, password);
                 if(res==true)
                 {
+                    SharedPreferences sharedpreferences = getSharedPreferences("credentials", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    editor.putString("login", login);
+                    editor.putString("password", password);
+                    editor.commit();
+
                     LoginIntent1 = new Intent(getApplicationContext(), HomeActivity.class);
                     LoginActivity.this.startActivity(LoginIntent1);
+
+                    /*SharedPreferences settings = getSharedPreferences("credentials", Context.MODE_PRIVATE);
+                    String loginS = settings.getString("login", "");
+                    String passwordS = settings.getString("password", "");
+
+                    Toast.makeText(LoginActivity.this, loginS+" "+passwordS, Toast.LENGTH_LONG).show();*/
+
                 }else{
                     /*LoginIntent2 = new Intent(getApplicationContext(), LoginActivity.class);
                     LoginActivity.this.startActivity(LoginIntent2);*/

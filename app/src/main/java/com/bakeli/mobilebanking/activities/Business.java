@@ -10,7 +10,8 @@ import com.bakeli.mobilebanking.R;
 
 import io.realm.Realm;
 
-public class Saving extends AppCompatActivity {
+public class Business extends AppCompatActivity {
+
     Intent intent;
     Realm realm;
 
@@ -30,7 +31,7 @@ public class Saving extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getApplicationContext(), DepotActivity.class);
-                Saving.this.startActivity(intent);
+                Business.this.startActivity(intent);
             }
         });
 
@@ -40,7 +41,7 @@ public class Saving extends AppCompatActivity {
             public void onClick(View v) {
 
                 intent = new Intent(getApplicationContext(), RetraitActivity.class);
-                Saving.this.startActivity(intent);
+                Business.this.startActivity(intent);
 
             }
         });
@@ -51,7 +52,7 @@ public class Saving extends AppCompatActivity {
             public void onClick(View v) {
 
                 intent = new Intent(getApplicationContext(), ConsultationActivity.class);
-                Saving.this.startActivity(intent);
+                Business.this.startActivity(intent);
 
             }
         });
@@ -62,7 +63,7 @@ public class Saving extends AppCompatActivity {
             public void onClick(View v) {
 
                 intent = new Intent(getApplicationContext(), VirementActivity.class);
-                Saving.this.startActivity(intent);
+                Business.this.startActivity(intent);
 
             }
         });

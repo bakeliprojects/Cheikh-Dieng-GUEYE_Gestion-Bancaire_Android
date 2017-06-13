@@ -24,8 +24,8 @@ public class DepotActivity extends AppCompatActivity {
         setContentView(R.layout.activity_depot);
         realm = Realm.getDefaultInstance();
 
-        final EditText mntDepot = (EditText) findViewById(R.id.etMntRetrait);
-        Button bValider = (Button) findViewById(R.id.bVirement);
+        final EditText mntDepot = (EditText) findViewById(R.id.etMntDepot);
+        Button bValider = (Button) findViewById(R.id.bDepot);
 
         bValider.setOnClickListener(new View.OnClickListener() {
             @Override

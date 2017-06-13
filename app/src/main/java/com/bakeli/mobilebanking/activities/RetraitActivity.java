@@ -25,7 +25,7 @@ public class RetraitActivity extends AppCompatActivity {
         setContentView(R.layout.activity_retrait);
         realm = Realm.getDefaultInstance();
 
-        final EditText mntDepot = (EditText) findViewById(R.id.etMntRetrait);
+        final EditText mntDepot = (EditText) findViewById(R.id.etMntDepot);
         Button bValiderRetrait = (Button) findViewById(R.id.bRetrait);
 
         bValiderRetrait.setOnClickListener(new View.OnClickListener() {

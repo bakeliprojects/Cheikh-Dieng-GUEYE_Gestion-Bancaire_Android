@@ -65,4 +65,20 @@ public class DatabaseManager {
         RealmResults<Account> result2 = realm.where(Account.class).findAll();
         return result2;
     }
+
+
+    //Account by ID
+    public Account getByPrimaryKey(Realm realm, String id) {
+        return realm.where(Account.class).equalTo("id", id).findFirst();
+    }
+
+    //User by ID
+    public User getByUserById(Realm realm, String id) {
+        return realm.where(User.class).equalTo("id", id).findFirst();
+    }
+
+    //User by credentials
+    public User getByUserByCredentials(Realm realm, String login, String password) {
+        return realm.where(User.class).equalTo("login", login).equalTo("password", password).findFirst();
+}
 }

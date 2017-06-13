@@ -9,28 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.LoginActivity">
+        <activity android:name=".activities.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- <activity android:name=".HomeActivity"></activity> -->
-        <activity
-            android:name=".activities.HomeActivity"
-            android:label="HomeActivity"
-            android:parentActivityName=".activities.LoginActivity">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.bakeli.mobilebanking.activities.LoginActivity" />
-        </activity>
-        <!-- <activity android:name=".InsertUser"></activity> -->
+        <activity android:name=".activities.HomeActivity" />
+        <activity android:name=".activities.LoginActivity" />
         <activity
             android:name=".activities.InsertUser"
-            android:label="InsertUser"
+            android:label="Inscription"
             android:parentActivityName=".activities.LoginActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -41,7 +31,7 @@
         <!-- <activity android:name=".activities.DisplayInfo"></activity> -->
         <activity
             android:name=".activities.DisplayInfo"
-            android:label="DisplayInfo"
+            android:label="Informations utilisateur"
             android:parentActivityName=".activities.InsertUser">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -52,7 +42,7 @@
         <!-- <activity android:name=".activities.Saving"></activity> -->
         <activity
             android:name=".activities.Saving"
-            android:label="Saving"
+            android:label="Compte Epargne"
             android:parentActivityName=".activities.HomeActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -63,7 +53,7 @@
         <!-- <activity android:name=".activities.DepotActivity" /> -->
         <activity
             android:name=".activities.DepotActivity"
-            android:label="DepotActivity"
+            android:label="Effectuer un depôt"
             android:parentActivityName=".activities.Saving">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -74,7 +64,7 @@
         <!-- <activity android:name=".activities.RetraitActivity" /> -->
         <activity
             android:name=".activities.RetraitActivity"
-            android:label="RetraitActivity"
+            android:label="Effectuer un retrait"
             android:parentActivityName=".activities.Saving">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -82,10 +72,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.bakeli.mobilebanking.activities.Saving" />
         </activity>
-        <!-- <activity android:name=".activities.ConsultationActivity" />-->
+        <!-- <activity android:name=".activities.ConsultationActivity" /> -->
         <activity
             android:name=".activities.ConsultationActivity"
-            android:label="ConsultationActivity"
+            android:label="Consultation de solde"
             android:parentActivityName=".activities.Saving">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -93,10 +83,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.bakeli.mobilebanking.activities.Saving" />
         </activity>
-        <!-- <activity android:name=".activities.VirementActivity"></activity>-->
+        <!-- <activity android:name=".activities.VirementActivity"></activity> -->
         <activity
             android:name=".activities.VirementActivity"
-            android:label="VirementActivity"
+            android:label="Effectuer un virement"
             android:parentActivityName=".activities.Saving">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -104,6 +94,28 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.bakeli.mobilebanking.activities.Saving" />
         </activity>
+        <!-- <activity android:name=".activities.Checking"></activity> -->
+        <activity
+            android:name=".activities.Checking"
+            android:label="Compte Courant"
+            android:parentActivityName=".activities.HomeActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bakeli.mobilebanking.activities.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".activities.Business"
+            android:label="Compte Business"
+            android:parentActivityName=".activities.HomeActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bakeli.mobilebanking.activities.HomeActivity" />
+        </activity>
+        <activity android:name=".activities.Disconnect"></activity>
     </application>
 
 </manifest>
