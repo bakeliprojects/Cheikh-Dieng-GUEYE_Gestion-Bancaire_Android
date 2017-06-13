@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bakeli.mobilebanking.activities.Saving">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Vous pouvez effectuer les opérations suibvantes : "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/bVirement"
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="21dp"
+        android:background="@android:color/holo_red_light"
+        android:text="Virement"
+        android:layout_above="@+id/bRetrait"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/bConsultation"
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:background="@android:color/darker_gray"
+        android:text="Consultation de solde"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/bDepot"
+        android:layout_alignStart="@+id/bDepot"
+        android:layout_marginBottom="26dp" />
+
+    <Button
+        android:id="@+id/bRetrait"
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:background="@android:color/holo_green_light"
+        android:text="Retrait"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/bVirement"
+        android:layout_alignStart="@+id/bVirement" />
+
+    <Button
+        android:id="@+id/bDepot"
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="Depot"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/bRetrait"
+        android:layout_alignLeft="@+id/bRetrait"
+        android:layout_alignStart="@+id/bRetrait" />
+
+</RelativeLayout>
