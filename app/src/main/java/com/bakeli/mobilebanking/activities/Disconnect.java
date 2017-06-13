@@ -33,6 +33,7 @@ public class Disconnect extends AppCompatActivity {
             public void run() {
 
                 Disconnect.this.finish();
+                Disconnect.this.closeContextMenu();
 
             }
         }, SPLASH_DISPLAY_LENGTH);
