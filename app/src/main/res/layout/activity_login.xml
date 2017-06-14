@@ -8,15 +8,17 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="100dp"
-        android:layout_height="27dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:text="@string/tvLogin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
         android:layout_above="@+id/editText"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="33dp" />
+        android:fontFamily="sans-serif"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="16dp"
+        tools:text="@string/tvLogin" />
 
     <EditText
         android:id="@+id/editText"
@@ -41,7 +43,7 @@
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="125dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="25dp"
         android:layout_above="@+id/button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -53,9 +55,9 @@
         android:text="@string/bConnect"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="177dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginBottom="82dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/tvSignIn"
@@ -65,4 +67,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="54dp"
         android:text="@string/tvSignIn" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/mob"
+        android:layout_marginTop="31dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
 </RelativeLayout>
