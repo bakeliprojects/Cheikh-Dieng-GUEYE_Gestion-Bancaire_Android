@@ -58,7 +58,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 savingIntent = new Intent(getApplicationContext(), Disconnect.class);
-                //HomeActivity.this.startActivity(savingIntent);
+                HomeActivity.this.startActivity(savingIntent);
                 HomeActivity.this.finish();
 
             }
