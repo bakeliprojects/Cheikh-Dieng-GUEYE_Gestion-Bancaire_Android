@@ -1,6 +1,7 @@
 package com.bakeli.mobilebanking.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class VirementActivity extends AppCompatActivity {
         final EditText mnt = (EditText) findViewById(R.id.etMntVirement);
         final EditText benef = (EditText) findViewById(R.id.etBeneficiaire);
         Button bValiderVirement = (Button) findViewById(R.id.bVirement);
+        Button bAnnuler = (Button) findViewById(R.id.bVirementCancel);
 
         bValiderVirement.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,27 +43,60 @@ public class VirementActivity extends AppCompatActivity {
 
                 User u = db.getByUserByCredentials(realm, loginS,passwordS);
 
-                realm.beginTransaction();
+
                 //Compte du beneficiaire
                 Account a1 = db.getByPrimaryKey(realm,benef.getText().toString());
+                realm.beginTransaction();
+                Account a2 = db.getByPrimaryKey(realm, u.getIdCompte());
+                if(a2!=null)
+                {
+                    if(a1 != null)
+                    {
+                        if(Integer.parseInt(a2.getSolde()) >= Integer.parseInt(mnt.getText().toString())) {
+                            //Credit sur le compte beneficiaire
+                            int sommeAjout = Integer.parseInt(a1.getSolde()) + Integer.parseInt(mnt.getText().toString());
+                            a1.setSolde(String.valueOf(sommeAjout));
 
-                //Credit sur le compte beneficiaire
-                int sommeAjout = Integer.parseInt(a1.getSolde()) + Integer.parseInt(mnt.getText().toString());
-                a1.setSolde(String.valueOf(sommeAjout));
+                            //Compte donneur
 
-                //Compte donneur
-                Account a2 = db.getByPrimaryKey(realm, u.getId());
 
-                //Debit sur le compte donneur
-                int sommeRetrait = Integer.parseInt(a2.getSolde()) - Integer.parseInt(mnt.getText().toString());
-                a2.setSolde(String.valueOf(sommeRetrait));
+                            //Debit sur le compte donneur
+                            int sommeRetrait = Integer.parseInt(a2.getSolde()) - Integer.parseInt(mnt.getText().toString());
+                            a2.setSolde(String.valueOf(sommeRetrait));
+                            Toast.makeText(VirementActivity.this, "Operation effectuée avec succès!!!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getApplicationContext(), ConsultationActivity.class);
+                            VirementActivity.this.startActivity(intent);
+                        }else{
+                            Toast.makeText(VirementActivity.this, "Operation Impossible\n Solde Insuffisant!!!", Toast.LENGTH_SHORT).show();
+                        }
+                    }else{
+                        Toast.makeText(VirementActivity.this, "Ce compte n'existe pas!!!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                        VirementActivity.this.startActivity(intent);
+                    }
+                }else{
+                    Toast.makeText(VirementActivity.this, "Cette utilisateur n'existe pas!!!", Toast.LENGTH_SHORT).show();
+                }
 
                 realm.commitTransaction();
 
 
 
-                Toast.makeText(VirementActivity.this,"Beneficiaire :"+ a1.getId()+" "+a1.getSolde(), Toast.LENGTH_LONG).show();
-                Toast.makeText(VirementActivity.this,"Donneur :"+ a2.getId()+" "+a2.getSolde(), Toast.LENGTH_LONG).show();
+
+
+
+                /*Toast.makeText(VirementActivity.this,"Beneficiaire :"+ a1.getId()+" "+a1.getSolde(), Toast.LENGTH_LONG).show();
+                Toast.makeText(VirementActivity.this,"Donneur :"+ a2.getId()+" "+a2.getSolde(), Toast.LENGTH_LONG).show();*/
+
+            }
+        });
+
+        bAnnuler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                VirementActivity.this.startActivity(intent);
 
             }
         });

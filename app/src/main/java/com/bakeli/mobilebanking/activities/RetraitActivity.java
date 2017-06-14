@@ -1,6 +1,8 @@
 package com.bakeli.mobilebanking.activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,13 +29,34 @@ public class RetraitActivity extends AppCompatActivity {
 
         final EditText mntDepot = (EditText) findViewById(R.id.etMntDepot);
         Button bValiderRetrait = (Button) findViewById(R.id.bRetrait);
+        Button bAnnuler = (Button) findViewById(R.id.bRetraitCancel);
 
         bValiderRetrait.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 DatabaseManager db = new DatabaseManager();
-                RealmList<User> users = new RealmList<>();
+                realm.beginTransaction();
+                SharedPreferences settings = getSharedPreferences("credentials", Context.MODE_PRIVATE);
+                String loginS = settings.getString("login", "");
+                String passwordS = settings.getString("password", "");
+
+                User u = db.getByUserByCredentials(realm, loginS, passwordS);
+                Account ac = db.getByPrimaryKey(realm, u.getIdCompte());
+
+                if(Integer.parseInt(ac.getSolde().toString()) > Integer.parseInt(mntDepot.getText().toString()))
+                {
+                    int ret = Integer.parseInt(ac.getSolde()) - Integer.parseInt(mntDepot.getText().toString());
+                    ac.setSolde(String.valueOf(ret));
+                    Toast.makeText(RetraitActivity.this, "Operation effectué avec succès!!!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), ConsultationActivity.class);
+                    RetraitActivity.this.startActivity(intent);
+                }else{
+                    Toast.makeText(RetraitActivity.this, "Votre solde est insuffisant pour effectuer cette operation!!!", Toast.LENGTH_SHORT).show();
+                }
+
+                realm.commitTransaction();
+                /*RealmList<User> users = new RealmList<>();
                 RealmList <Account> accounts = new RealmList<>();
 
                 accounts.addAll(db.getAllAccounts().subList(0,db.getAllAccounts().size()));
@@ -57,9 +80,20 @@ public class RetraitActivity extends AppCompatActivity {
                         }
                     }
 
-                }
+                }*/
 
             }
         });
+
+        bAnnuler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                RetraitActivity.this.startActivity(intent);
+
+            }
+        });
+
     }
 }

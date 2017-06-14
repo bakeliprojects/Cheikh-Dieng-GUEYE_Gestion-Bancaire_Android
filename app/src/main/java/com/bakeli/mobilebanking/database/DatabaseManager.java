@@ -32,8 +32,9 @@ public class DatabaseManager {
     }
 
     public Account addAccount(String type, String solde) {
+        int code = Integer.parseInt(solde);
         realm.beginTransaction();
-        Account a = realm.createObject(Account.class, UUID.randomUUID().toString());
+        Account a = realm.createObject(Account.class, (code+solde).toString());
         //u.setId(UUID.randomUUID().toString());
        //a.setId(id);
         a.setSolde(solde);
