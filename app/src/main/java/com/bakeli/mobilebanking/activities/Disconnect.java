@@ -28,6 +28,15 @@ public class Disconnect extends AppCompatActivity {
         preferences.edit().remove("login").commit();
         preferences.edit().remove("password").commit();
 
+        SharedPreferences settings = getSharedPreferences("info", Context.MODE_PRIVATE);
+        settings.edit().remove("log").commit();
+        settings.edit().remove("pass").commit();
+        settings.edit().remove("prenom").commit();
+        settings.edit().remove("type").commit();
+        settings.edit().remove("solde").commit();
+        settings.edit().remove("nom").commit();
+
+
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {

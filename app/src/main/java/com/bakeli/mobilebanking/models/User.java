@@ -17,6 +17,15 @@ public class User extends RealmObject {
     private String name;
     private String login;
     private String password;
+    private String idCompte;
+
+    public String getIdCompte() {
+        return idCompte;
+    }
+
+    public void setIdCompte(String idCompte) {
+        this.idCompte = idCompte;
+    }
 
     public String getLogin() {
         return login;

@@ -22,44 +22,40 @@
         android:id="@+id/etNom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/etPrenom"
-        android:layout_marginTop="17dp"
         android:ems="10"
         android:hint="@string/etNom"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_below="@+id/etPrenom"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/etLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/etNom"
-        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/etLogin"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_below="@+id/etNom"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/etLogin"
-        android:layout_marginTop="17dp"
         android:ems="10"
         android:hint="@string/etPassword"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_below="@+id/etLogin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/bSinscrire"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/bSinscrire"
-        android:layout_marginBottom="12dp"
         android:layout_above="@+id/bAnnuler"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -78,24 +74,24 @@
         android:id="@+id/etTypeCompte"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/etPassword"
-        android:layout_marginTop="27dp"
         android:ems="10"
         android:hint="@string/etTypeCompte"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_below="@+id/etPassword"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp" />
 
     <EditText
         android:id="@+id/etSolde"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/etTypeCompte"
-        android:layout_marginTop="19dp"
         android:ems="10"
         android:hint="Solde de depart"
-        android:inputType="textPersonName" />
+        android:inputType="number"
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/etTypeCompte"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

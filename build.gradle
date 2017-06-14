@@ -28,6 +28,6 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "io.realm:realm-gradle-plugin:3.3.1"
+        classpath "io.realm:realm-gradle-plugin:3.3.2"
     }
 }

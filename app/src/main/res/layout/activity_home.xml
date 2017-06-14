@@ -10,22 +10,11 @@
         android:id="@+id/bEpargne"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="91dp"
         android:background="@android:color/holo_green_dark"
         android:text="@string/bSavingAccount"
         tools:layout_editor_absoluteX="119dp"
         tools:layout_editor_absoluteY="64dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:id="@+id/bCourant"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@android:color/holo_blue_bright"
-        android:text="@string/bCheckingAccount"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -33,12 +22,12 @@
         android:id="@+id/bBusiness"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="23dp"
         android:background="@android:color/holo_orange_dark"
         android:text="@string/bBusinessAccount"
         android:layout_below="@+id/bCourant"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -59,4 +48,15 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="12dp"
         android:text="Se Deconnecter" />
+
+    <Button
+        android:id="@+id/bCourant"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/holo_blue_bright"
+        android:text="@string/bCheckingAccount"
+        android:layout_below="@+id/bEpargne"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp" />
 </RelativeLayout>

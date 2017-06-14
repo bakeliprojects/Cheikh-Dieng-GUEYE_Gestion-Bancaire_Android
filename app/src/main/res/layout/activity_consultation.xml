@@ -10,68 +10,65 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
-        android:text="Prenom : "
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp" />
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="39dp"
+        android:text="Prenom : "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <TextView
         android:id="@+id/tvPrenomConsultation"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:layout_alignBaseline="@+id/textView6"
         android:layout_alignBottom="@+id/textView6"
-        android:layout_marginLeft="69dp"
-        android:layout_marginStart="69dp"
-        android:layout_toEndOf="@+id/textView6"
-        android:layout_toRightOf="@+id/textView6"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:layout_alignLeft="@+id/tvIdCompte"
+        android:layout_alignStart="@+id/tvIdCompte" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nom : "
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:layout_below="@+id/textView6"
         android:layout_alignLeft="@+id/textView6"
         android:layout_alignStart="@+id/textView6"
-        android:layout_marginTop="16dp" />
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="16dp"
+        android:text="Nom : "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <TextView
         android:id="@+id/tvNomConsultation"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView14"
-        android:layout_alignBottom="@+id/textView14"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:layout_above="@+id/textView16"
+        android:layout_alignLeft="@+id/tvPrenomConsultation"
+        android:layout_alignStart="@+id/tvPrenomConsultation" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Type Compte : "
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:layout_below="@+id/textView14"
         android:layout_alignLeft="@+id/textView14"
         android:layout_alignStart="@+id/textView14"
-        android:layout_marginTop="25dp" />
+        android:layout_below="@+id/textView14"
+        android:layout_marginTop="25dp"
+        android:text="Type Compte : "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <TextView
         android:id="@+id/tvCompteConsultation"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:layout_alignBaseline="@+id/textView16"
         android:layout_alignBottom="@+id/textView16"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:layout_alignLeft="@+id/tvNomConsultation"
+        android:layout_alignStart="@+id/tvNomConsultation" />
 
     <TextView
         android:id="@+id/textView18"
@@ -82,15 +79,37 @@
         android:layout_below="@+id/textView16"
         android:layout_marginTop="32dp"
         android:text="Solde Actuel : "
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <TextView
         android:id="@+id/soldeConsultation"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:layout_alignBaseline="@+id/textView18"
+        android:layout_alignBottom="@+id/textView18"
+        android:layout_alignLeft="@+id/tvCompteConsultation"
+        android:layout_alignStart="@+id/tvCompteConsultation" />
+
+    <TextView
+        android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/textView18"
-        android:layout_toRightOf="@+id/textView18"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:layout_alignLeft="@+id/textView18"
+        android:layout_alignStart="@+id/textView18"
+        android:layout_below="@+id/textView18"
+        android:layout_marginTop="42dp"
+        android:text="ID Compte : "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <TextView
+        android:id="@+id/tvIdCompte"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView12"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp" />
 
 </RelativeLayout>

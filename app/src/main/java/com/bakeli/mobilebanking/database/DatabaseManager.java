@@ -17,7 +17,7 @@ public class DatabaseManager {
     //Realm realm;
 
     //Ajout d'un nouveau user
-    public void addUser(String login, String password, String name, String nom) {
+    public void addUser(String login, String password, String name, String nom, String idCompte) {
         realm.beginTransaction();
         User u = realm.createObject(User.class, login+password);
         //UUID.randomUUID().toString()
@@ -26,18 +26,21 @@ public class DatabaseManager {
         u.setPassword(password);
         u.setName(name);
         u.setNom(nom);
+        u.setIdCompte(idCompte);
         realm.commitTransaction();
 
     }
 
-    public void addAccount(String type, String solde, String id) {
+    public Account addAccount(String type, String solde) {
         realm.beginTransaction();
-        Account a = realm.createObject(Account.class, id);
+        Account a = realm.createObject(Account.class, UUID.randomUUID().toString());
         //u.setId(UUID.randomUUID().toString());
        //a.setId(id);
         a.setSolde(solde);
         a.setType(type);
         realm.commitTransaction();
+
+        return a;
 
     }
 
@@ -60,7 +63,7 @@ public class DatabaseManager {
         return results;
     }
 
-    //Liste des users
+    //Liste des comptes
     public RealmResults<Account> getAllAccounts() {
         RealmResults<Account> result2 = realm.where(Account.class).findAll();
         return result2;

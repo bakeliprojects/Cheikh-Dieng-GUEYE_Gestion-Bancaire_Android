@@ -29,6 +29,7 @@ public class ConsultationActivity extends AppCompatActivity {
         TextView prenom = (TextView) findViewById(R.id.tvPrenomConsultation);
         TextView nom = (TextView) findViewById(R.id.tvNomConsultation);
         TextView type = (TextView) findViewById(R.id.tvCompteConsultation);
+        TextView id = (TextView) findViewById(R.id.tvIdCompte);
 
         DatabaseManager db = new DatabaseManager();
         SharedPreferences settings = getSharedPreferences("credentials", Context.MODE_PRIVATE);
@@ -38,12 +39,13 @@ public class ConsultationActivity extends AppCompatActivity {
         User u = db.getByUserByCredentials(realm, loginS,passwordS);
 
 
-        Account a1 = db.getByPrimaryKey(realm,u.getId());
+        Account a1 = db.getByPrimaryKey(realm,u.getIdCompte());
 
-        solde.setText(a1.getSolde().toString());
-        type.setText(a1.getType().toString());
-        prenom.setText(u.getName().toString());
-        nom.setText(u.getNom().toString());
+        solde.setText(a1.getSolde());
+        type.setText(a1.getType());
+        prenom.setText(u.getName());
+        nom.setText(u.getNom());
+        id.setText(a1.getId());
 
     }
 }
