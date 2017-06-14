@@ -50,15 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                     LoginIntent1 = new Intent(getApplicationContext(), HomeActivity.class);
                     LoginActivity.this.startActivity(LoginIntent1);
 
-                    /*SharedPreferences settings = getSharedPreferences("credentials", Context.MODE_PRIVATE);
-                    String loginS = settings.getString("login", "");
-                    String passwordS = settings.getString("password", "");
-
-                    Toast.makeText(LoginActivity.this, loginS+" "+passwordS, Toast.LENGTH_LONG).show();*/
-
                 }else{
-                    /*LoginIntent2 = new Intent(getApplicationContext(), LoginActivity.class);
-                    LoginActivity.this.startActivity(LoginIntent2);*/
                     Toast.makeText(LoginActivity.this, "Veuillez vous connecter!!!", Toast.LENGTH_SHORT).show();
                 }
 

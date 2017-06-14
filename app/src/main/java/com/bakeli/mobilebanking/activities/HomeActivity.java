@@ -61,5 +61,14 @@ public class HomeActivity extends AppCompatActivity {
                 HomeActivity.this.finish();
             }
         });
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
     }
 }
